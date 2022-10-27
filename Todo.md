@@ -1,6 +1,5 @@
 # Todo
 
-- Deploy to Vercel
 - Add ui package
-- Add eslint package
+- Use app dir
 - Add content for boilerplate
