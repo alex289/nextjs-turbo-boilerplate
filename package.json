@@ -1,0 +1,29 @@
+{
+  "name": "my-turborepo",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "db-generate": "turbo db-generate",
+    "db-push": "turbo db-push",
+    "build": "turbo build",
+    "dev": "turbo dev --parallel",
+    "clean:workspaces": "turbo clean",
+    "clean": "rm -rf node_modules .turbo .vercel",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "packageManager": "pnpm@7.14.0"
+}

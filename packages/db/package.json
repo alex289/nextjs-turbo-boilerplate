@@ -1,0 +1,22 @@
+{
+    "name": "db",
+    "version": "0.1.0",
+    "main": "./index.ts",
+    "types": "./index.ts",
+    "license": "MIT",
+    "scripts": {
+      "dev": "prisma studio",
+      "clean": "rm -rf .turbo node_modules",
+      "db-push": "prisma db push",
+      "db-generate": "prisma generate"
+    },
+    "dependencies": {
+      "@prisma/client": "^4.4.0",
+      "tsconfig": "workspace:*"
+    },
+    "devDependencies": {
+      "prisma": "^4.4.0",
+      "typescript": "^4.8.3"
+    }
+  }
+  
