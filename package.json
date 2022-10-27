@@ -1,11 +1,7 @@
 {
-  "name": "my-turborepo",
-  "version": "0.0.0",
+  "name": "nextjs-turbo-boilerplate",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "packageManager": "pnpm@7.13.0",
   "scripts": {
     "db-generate": "turbo db-generate",
     "db-push": "turbo db-push",
@@ -13,17 +9,12 @@
     "dev": "turbo dev --parallel",
     "clean:workspaces": "turbo clean",
     "clean": "rm -rf node_modules .turbo .vercel",
-    "lint": "turbo lint",
+    "lint": "turbo lint && manypkg check",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
-  "devDependencies": {
-    "eslint-config-custom": "workspace:*",
-    "prettier": "latest",
-    "turbo": "latest"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "dependencies": {},
-  "packageManager": "pnpm@7.14.0"
+  "dependencies": {
+    "@manypkg/cli": "^0.19.2",
+    "prettier": "^2.7.1",
+    "turbo": "^1.5.5"
+  }
 }
