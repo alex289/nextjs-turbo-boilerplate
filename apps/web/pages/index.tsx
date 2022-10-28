@@ -1,5 +1,8 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
+
+import { Title } from 'ui/Title';
+
+import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
@@ -10,9 +13,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="container mx-auto flex min-h-screen flex-col items-center py-16">
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
+        <Title>
           Next.Js <span className="text-indigo-500">Turbo</span> Boilerplate
-        </h1>
+        </Title>
         <div className="flex w-full items-center justify-center pt-6 text-2xl text-blue-500">
           Powered by the greatest technologies of today
         </div>

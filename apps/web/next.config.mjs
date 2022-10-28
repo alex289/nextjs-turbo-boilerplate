@@ -13,7 +13,7 @@ function defineNextConfig(config) {
   return config;
 }
 
-export default withTM(['db'])(
+export default withTM(['db', 'ui'])(
   defineNextConfig({
     reactStrictMode: true,
     swcMinify: true,
