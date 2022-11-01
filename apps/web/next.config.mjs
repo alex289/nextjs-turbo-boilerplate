@@ -1,6 +1,4 @@
 // @ts-check
-import withTM from 'next-transpile-modules';
-
 /**
  * Don't be scared of the generics here.
  * All they do is to give us autocompletion when using this.
@@ -13,9 +11,10 @@ function defineNextConfig(config) {
   return config;
 }
 
-export default withTM(['db', 'ui'])(
-  defineNextConfig({
-    reactStrictMode: true,
-    swcMinify: true,
-  })
-);
+export default defineNextConfig({
+  reactStrictMode: true,
+  swcMinify: true,
+  experimental: {
+    transpilePackages: ['ui', 'db'],
+  },
+});
