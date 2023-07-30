@@ -14,7 +14,5 @@ function defineNextConfig(config) {
 export default defineNextConfig({
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    transpilePackages: ['ui', 'db'],
-  },
+  transpilePackages: ['ui', 'db'],
 });
