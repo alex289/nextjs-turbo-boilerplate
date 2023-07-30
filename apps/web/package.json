@@ -10,11 +10,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "db": "4.0.1",
+    "db": "0.1.0",
     "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "ui": "0.2.4"
+    "ui": "0.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.4.5",
