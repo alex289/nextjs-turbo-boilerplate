@@ -1,8 +1,8 @@
-
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2017",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "checkJs": true,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,7 +15,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
   },
   "exclude": ["node_modules"]
 }

@@ -1,18 +1,19 @@
 {
+  "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
     "build": {
       "dependsOn": ["^build", "^db-generate"],
-      "outputs": [".next/**", ".expo/**"]
+      "outputs": [".next/**"]
     },
     "lint": {
-      "outputs": []
+      "outputs": ["node_modules/.cache/.eslintcache"]
     },
     "dev": {
       "dependsOn": ["^db-generate"],
       "cache": false
     },
     "db-generate": {
-      "cache": true 
+      "cache": true
     },
     "db-push": {
       "cache": false

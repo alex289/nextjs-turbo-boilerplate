@@ -16,10 +16,6 @@ prisma/db.sqlite-journal
 .next/
 out/
 
-# expo
-.expo/
-dist/
-
 # production
 build
 
@@ -42,6 +38,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+next-env.d.ts
 
 # turbo
 .turbo

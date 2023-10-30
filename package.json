@@ -10,7 +10,7 @@
     "clean:workspaces": "turbo clean",
     "clean": "rm -rf node_modules .turbo .vercel",
     "lint": "turbo lint && manypkg check",
-    "format": "prettier --write \"**/*.{ts,tsx}\""
+    "format": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\""
   },
   "dependencies": {
     "@manypkg/cli": "^0.21.0",
