@@ -5,8 +5,8 @@
   "main": "./index.tsx",
   "types": "./index.tsx",
   "devDependencies": {
-    "@types/react": "^18.2.34",
-    "@types/react-dom": "^18.2.14",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
     "react": "18.2.0",
     "typescript": "^5.2.2"
   }
