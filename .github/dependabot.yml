@@ -17,6 +17,10 @@ updates:
     ignore:
       - dependency-name: 'db'
       - dependency-name: 'ui'
+    assignees:
+      - "alex289"
+    reviewers:
+      - "alex289"
 
   - package-ecosystem: 'github-actions'
     directory: '/'
@@ -32,3 +36,7 @@ updates:
       dependencies:
         patterns:
           - '*'
+    assignees:
+      - "alex289"
+    reviewers:
+      - "alex289"
