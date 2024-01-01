@@ -3,7 +3,26 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
+      time: '06:00'
+    commit-message:
+      prefix: 'chore'
+    labels:
+      - 'dependencies'
+    open-pull-requests-limit: 5
+    groups:
+      dependencies:
+        patterns:
+          - '*'
+    assignees:
+      - 'alex289'
+    reviewers:
+      - 'alex289'
+
+  - package-ecosystem: 'npm'
+    directory: '/apps/web'
+    schedule:
+      interval: 'monthly'
       time: '06:00'
     commit-message:
       prefix: 'chore'
@@ -18,14 +37,14 @@ updates:
       - dependency-name: 'db'
       - dependency-name: 'ui'
     assignees:
-      - "alex289"
+      - 'alex289'
     reviewers:
-      - "alex289"
+      - 'alex289'
 
-  - package-ecosystem: 'github-actions'
-    directory: '/'
+  - package-ecosystem: 'npm'
+    directory: '/packages/db'
     schedule:
-      interval: 'weekly'
+      interval: 'monthly'
       time: '06:00'
     commit-message:
       prefix: 'chore'
@@ -37,6 +56,44 @@ updates:
         patterns:
           - '*'
     assignees:
-      - "alex289"
+      - 'alex289'
     reviewers:
-      - "alex289"
+      - 'alex289'
+
+  - package-ecosystem: 'npm'
+    directory: '/packages/ui'
+    schedule:
+      interval: 'monthly'
+      time: '06:00'
+    commit-message:
+      prefix: 'chore'
+    labels:
+      - 'dependencies'
+    open-pull-requests-limit: 5
+    groups:
+      dependencies:
+        patterns:
+          - '*'
+    assignees:
+      - 'alex289'
+    reviewers:
+      - 'alex289'
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+      time: '06:00'
+    commit-message:
+      prefix: 'chore'
+    labels:
+      - 'dependencies'
+    open-pull-requests-limit: 5
+    groups:
+      dependencies:
+        patterns:
+          - '*'
+    assignees:
+      - 'alex289'
+    reviewers:
+      - 'alex289'
