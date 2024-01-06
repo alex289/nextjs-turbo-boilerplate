@@ -20,10 +20,9 @@ jobs:
         with:
           version: 8
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
 
       - name: Update dependencies
@@ -33,7 +32,7 @@ jobs:
           cd apps/web && ncu -x db,ui -u
           cd ../../packages/db && ncu -u
           cd ../ui && ncu -u
-          cd ../../ && pnpm install
+          cd ../../ && pnpm install --no-frozen-lockfile
 
       - name: Check for changes
         id: changes
