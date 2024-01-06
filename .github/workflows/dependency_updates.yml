@@ -1,0 +1,58 @@
+name: Dependency Updates
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  update-dependencies:
+    runs-on: ubuntu-latest
+    env:
+      assignee: alex289
+      baseBranch: main
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Update dependencies
+        run: |
+          npm install -g npm-check-updates
+          ncu -u
+          cd apps/web && ncu -x db,ui -u
+          cd ../../packages/db && ncu -u
+          cd ../ui && ncu -u
+          cd ../../ && pnpm install
+
+      - name: Check for changes
+        id: changes
+        run: git diff --exit-code && echo "changes=true" >> $GITHUB_ENV
+
+      - name: Get current date
+        if: env.changes == 'true'
+        id: date
+        run: echo "date=$(date +'%d_%m_%Y')" >> $GITHUB_ENV
+
+      - name: Create Pull Request
+        if: env.changes == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: 'update/${{ env.date }}'
+          labels: dependencies
+          delete-branch: true
+          commit-message: 'chore: Update dependencies'
+          assignees: ${{ env.assignee }}
+          base: ${{ env.baseBranch }}
+          title: 'Automatic Package Update ${{ env.date }}'
+          body: This pull request includes updates for all nodejs dependencies in the project.
