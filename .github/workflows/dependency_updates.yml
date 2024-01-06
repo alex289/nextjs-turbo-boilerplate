@@ -37,7 +37,11 @@ jobs:
 
       - name: Check for changes
         id: changes
-        run: git diff --exit-code && echo "changes=true" >> $GITHUB_ENV
+        run: |
+          git_status=$(git status --porcelain)
+          if [ -n "$git_status" ]; then
+            echo "changes=true" >> $GITHUB_ENV
+          fi
 
       - name: Get current date
         if: env.changes == 'true'
