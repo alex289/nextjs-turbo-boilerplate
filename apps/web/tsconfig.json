@@ -14,5 +14,6 @@
     "**/*.cjs",
     "**/*.mjs",
     ".next/types/**/*.ts"
-  ]
+  ],
+  "exclude": ["eslint.config.mjs"]
 }
