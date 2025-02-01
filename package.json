@@ -14,8 +14,8 @@
   "devDependencies": {
     "@manypkg/cli": "^0.23.0",
     "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.9",
-    "turbo": "^2.3.3"
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "turbo": "^2.4.0"
   },
-  "packageManager": "pnpm@9.15.2"
+  "packageManager": "pnpm@9.15.4"
 }
